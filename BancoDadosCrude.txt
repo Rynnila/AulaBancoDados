@@ -1,0 +1,53 @@
+/*
+DDL - linguagem de definição de dados
+create database - criar banco de dados
+use - designar um banco de dados
+drop database - apagar um banco de dados
+create table - criar tabelas
+drop table - apagar tabelas
+show databases - visualizar os bancos de dados no sistema
+show tables - visualizar as tabelas criadas em um banco em específico
+describe ou desc - mostrar as especificações de cada tabela
+alter table ... add ...  - alterar a tabela adicionando um novo campo
+alter table ... modify ...  - alterar a tabela modificando um campo existente
+alter table ... drop ...  - alterar a tabela excluindo um campo existente
+
+DML - linguagem de manipulação de dados
+insert - cadastrar dados no banco de dados
+update - atualizar dados no banco de dados
+delete - apagar dados no banco de dados
+DQL - linguagem de consulta de dados
+select - consulta de dados no banco de dados
+*/
+create database mercado;
+use mercado;
+show databases;
+show tables;
+desc mercado;
+create table estoque(
+	codigo_estoque int,
+    produto varchar(90) not null,
+    quantidade int,
+    valor_compra decimal(9,2),
+    primary key(codigo_estoque)
+    );
+    
+create table funcionario(
+     codigo_funcionario int primary key,
+     nome varchar(90) not null,
+     cargo varchar(90)
+     );
+    
+create table vendas(
+     codigo_venda int primary key,
+     produto_venda int,
+     quantidade_venda int,
+     funcionario_venda int,
+     foreign key(produto_venda) references estoque(codigo_estoque),
+     foreign key(funcionario_venda) references funcionario(codigo_funcionario)
+);    
+alter table vendas add data_venda int;  
+alter table vendas modify data_venda date;
+alter table vendas drop data_venda;
+desc funcionario;
+select * from funcionario;
