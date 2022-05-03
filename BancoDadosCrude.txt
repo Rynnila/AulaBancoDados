@@ -1,18 +1,18 @@
 /*
-DDL - linguagem de definiÁ„o de dados
+DDL - linguagem de defini√ß√£o de dados
 create database - criar banco de dados
 use - designar um banco de dados
 drop database - apagar um banco de dados
 create table - criar tabelas
 drop table - apagar tabelas
 show databases - visualizar os bancos de dados no sistema
-show tables - visualizar as tabelas criadas em um banco em especÌfico
-describe ou desc - mostrar as especificaÁıes de cada tabela
+show tables - visualizar as tabelas criadas em um banco em espec√≠fico
+describe ou desc - mostrar as especifica√ß√µes de cada tabela
 alter table ... add ...  - alterar a tabela adicionando um novo campo
 alter table ... modify ...  - alterar a tabela modificando um campo existente
 alter table ... drop ...  - alterar a tabela excluindo um campo existente
 
-DML - linguagem de manipulaÁ„o de dados
+DML - linguagem de manipula√ß√£o de dados
 insert - cadastrar dados no banco de dados
 update - atualizar dados no banco de dados
 delete - apagar dados no banco de dados
@@ -51,3 +51,25 @@ alter table vendas modify data_venda date;
 alter table vendas drop data_venda;
 desc funcionario;
 select * from funcionario;
+
+desc estoque;
+
+insert into estoque (codigo_estoque, produto, quantidade, valor_compra) values
+(1, 'Arroz', 10, 12.9),
+(2, 'Feij√£o', 20, 5);
+
+insert into funcionario (codigo_funcionario, nome, cargo) values
+(1, 'Jo√£o', 'Analista de Sistemas'),
+(2, 'Nara', 'Gerente de TI');
+select * from funcionario;
+
+insert into vendas (codigo_venda, produto_venda, quantidade_venda, funcionario_venda) values
+(1,2,5,1),
+(2,1,10,1),
+(3,2,7,2),
+(4,1,3,2);
+select * from vendas;
+
+delete from vendas where codigo_venda=4;
+
+update funcionario set nome='Jo√£o da Silva' where codigo_funcionario=1;
