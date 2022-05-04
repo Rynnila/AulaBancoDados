@@ -19,5 +19,17 @@
             window.location.href='index.php';</script>");
             }
         }
+
+        public function consultarFuncionario(Funcionario $f){
+            $sql = 'select * from funcionario';
+            $banco = new Conexao();
+            $con = $banco->getConexao();
+            $resultado= $con->prepare($sql);
+            $resultado->execute();
+            if($resultado->rowCounter()>=0){
+                $valor=$resultado->fechAll(\PDO::FETCH_ASSOC);
+                return $valor;
+            }
+        }
     }
 ?>

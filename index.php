@@ -11,7 +11,12 @@
         <p><input type='number' name= 'codigo' placeholder='codigo'></p>
         <p><input type='text' name= 'nome' placeholder='nome'></p>
         <p><input type='text' name= 'cargo' placeholder='cargo'></p>
-        <p><input type='submit' value='cadastrar'></p>
+        <p><input type='submit' name= 'botao'value='cadastrar'></p>
+    </form>
+
+    <form action='controle.php' method='GET'>
+        <p><input type='number' name= 'codigo' placeholder='codigo'></p>
+        <p><input type='submit' name= 'botao' value='consultar'></p>
     </form>
 </body>
 </html>
