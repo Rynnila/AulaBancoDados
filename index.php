@@ -12,6 +12,8 @@
         <p><input type='text' name= 'nome' placeholder='nome'></p>
         <p><input type='text' name= 'cargo' placeholder='cargo'></p>
         <p><input type='submit' name= 'botao'value='cadastrar'></p>
+        <p><input type='submit' name= 'botao'value='atualizar'></p>
+        <p><input type='submit' name= 'botao'value='deletar'></p>
     </form>
 
     <form action='controle.php' method='GET'>

@@ -23,5 +23,9 @@
             echo $res ['nome']."br>";
             echo $res ['cargo']."br><br>";
         }
-    }
+    }else if ($botao=='atualizar'){
+            $funcDAO->atualizarFuncionario($func);
+        }else if ($botao=='deletar'){
+            $funcDAO->deletararFuncionario($codigo);
+        }
 ?>

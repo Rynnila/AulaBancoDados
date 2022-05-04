@@ -31,5 +31,42 @@
                 return $valor;
             }
         }
+
+        public function atualizarFuncionario(Funcionario $f){
+            $sql='update funcionario set nome=?, cargo=?, where codigo_funcionario=?)';
+
+            $banco = new Conexao();
+            $con = $banco->getConexao();
+            $resultado= $con->prepare($sql);
+            $resultado-> bindValue(3, $f->getCodigo());
+            $resultado-> bindValue(1,$f->getNome());
+            $resultado-> bindValue(2,$f->getCargo());
+            
+            $final=$resultado->execute();
+
+            if($final){
+            echo("<script LANGUAGE='JavaScript'>
+            window.alert('Atualizado com sucesso');
+            window.location.href='index.php';</script>");
+            }
+        }
+
+        public function deletarFuncionario($codigo){
+            $sql='delete from funcionario where codigo_funcionario=?)';
+
+            $banco = new Conexao();
+            $con = $banco->getConexao();
+            $resultado= $con->prepare($sql);
+            $resultado-> bindValue(1, $codigo);
+            
+            
+            $final=$resultado->execute();
+
+            if($final){
+            echo("<script LANGUAGE='JavaScript'>
+            window.alert('Deletado com sucesso');
+            window.location.href='index.php';</script>");
+            }
+        }
     }
 ?>
