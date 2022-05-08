@@ -7,15 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <form action='controle.php' method='GET'>
-        <p><input type='number' name= 'codigo' placeholder='codigo'></p>
-        <p><input type='text' name= 'nome' placeholder='nome'></p>
-        <p><input type='text' name= 'cargo' placeholder='cargo'></p>
+    <form action='controleFunc.php' method='GET'>
+        <p><input type='number' name= 'codigo_func' placeholder='codigo'></p>
+        <p><input type='text' name= 'nome_func' placeholder='nome'></p>
+        <p><input type='text' name= 'cargo_func' placeholder='cargo'></p>
 
-        <p><input type='submit' name= 'botao'value='cadastrar'></p>
-        <p><input type='submit' name= 'botao'value='atualizar'></p>
-        <p><input type='submit' name= 'botao'value='deletar'></p>
-        <p><input type='submit' name= 'botao' value='consultar'></p>
+        <p><input type='submit' name= 'botao_funcionario'value='cadastrar funcionario'></p>
+        <p><input type='submit' name= 'botao_funcionario'value='atualizar funcionario'></p>
+        <p><input type='submit' name= 'botao_funcionario'value='deletar funcionario'></p>
+        <p><input type='submit' name= 'botao_funcionario' value='consultar funcionario'></p>
     </form>
 
     <form action='controleEstoque.php' method='GET'>
@@ -24,10 +24,10 @@
         <p><input type='text' name='quantidade' placeholder='Quantidade'></p>
         <p><input type='text' name='valor_compra' placeholder='Valor da compra'></p>
 
-        <p><input type='submit' name='botao_estoque' value='cadastrar_prod'></p>
-        <p><input type='submit' name='botao_estoque' value='atualizar_prod'></p>
-        <p><input type='submit' name='botao_estoque' value='deletar_prod'></p>
-        <p><input type='submit' name='botao_estoque' value='consultar_prod'></p>
+        <p><input type='submit' name='botao_estoque' value='cadastrar produto'></p>
+        <p><input type='submit' name='botao_estoque' value='atualizar produto'></p>
+        <p><input type='submit' name='botao_estoque' value='deletar produto'></p>
+        <p><input type='submit' name='botao_estoque' value='consultar produto'></p>
     </form>
 </body>
 </html>

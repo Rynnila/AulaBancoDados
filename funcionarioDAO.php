@@ -1,15 +1,16 @@
 <?php
     include 'conexao.php';
+    
     class funcionarioDAO{
         public function cadastrarFuncionario(Funcionario $f){
-            $sql='insert into funcionario (codigo_funcionario,nome, cargo) values (?,?,?)';
+            $sql='insert into funcionario (codigo_func,nome_func, cargo_func) values (?,?,?)';
 
             $banco = new Conexao();
             $con = $banco->getConexao();
             $resultado= $con->prepare($sql);
-            $resultado-> bindValue(1, $f->getCodigo());
-            $resultado-> bindValue(2,$f->getNome());
-            $resultado-> bindValue(3,$f->getCargo());
+            $resultado-> bindValue(1, $f->getCodigo_Func());
+            $resultado-> bindValue(2,$f->getNome_Func());
+            $resultado-> bindValue(3,$f->getCargo_Func());
             
             $final=$resultado->execute();
 
@@ -33,14 +34,14 @@
         }
 
         public function atualizarFuncionario(Funcionario $f){
-            $sql = 'update funcionario set nome=?, cargo=? where codigo_funcionario=?';
+            $sql = 'update funcionario set nome_func=?, cargo_func=? where codigo_func=?';
 
             $banco = new conexao();
             $con = $banco->getConexao();
             $resultado = $con->prepare($sql);
-            $resultado->bindValue(3, $f->getCodigo());
-            $resultado->bindValue(1, $f->getNome());
-            $resultado->bindValue(2, $f->getCargo());
+            $resultado->bindValue(1, $f->getNome_Func());
+            $resultado->bindValue(2, $f->getCargo_Func());
+            $resultado->bindValue(3, $f->getCodigo_Func());
 
             $final = $resultado->execute();
 
@@ -51,13 +52,13 @@
             }
         }
 
-        public function deletarFuncionario($codigo){
-            $sql='delete from funcionario where codigo_funcionario=?';
+        public function deletarFuncionario($codigo_func){
+            $sql='delete from funcionario where codigo_func=?';
 
             $banco = new Conexao();
             $con = $banco->getConexao();
             $resultado= $con->prepare($sql);
-            $resultado-> bindValue(1, $codigo);
+            $resultado-> bindValue(1, $codigo_func);
             
             
             $final=$resultado->execute();
