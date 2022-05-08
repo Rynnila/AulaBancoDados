@@ -5,27 +5,27 @@
     $botao =filter_input(INPUT_GET,'botao');
 
     include 'funcionario.php';
-    $func = new Funcionario();
+    $func = new funcionario();
 
     $func->setCodigo($codigo);
     $func->setNome($nome);
     $func->setCargo($cargo);
 
-    include 'funcionarioDAO.PHP';
-    $funcDAO = new funcionarioDAO($func);
+    include 'funcionarioDAO.php';
+    $funcDAO = new funcionarioDAO();
 
     if($botao=='cadastrar'){
     $funcDAO->cadastrarFuncionario($func);
     }else if ($botao=='consultar'){
         $funcDAO->consultarFuncionario();
         foreach($funcDAO->consultarFuncionario() as $res){
-            echo $res ['codigo_funcionario']."br>";
-            echo $res ['nome']."br>";
-            echo $res ['cargo']."br><br>";
+            echo $res ['codigo_funcionario']."<br>";
+            echo $res ['nome']."<br>";
+            echo $res ['cargo']."<br><br>";
         }
     }else if ($botao=='atualizar'){
             $funcDAO->atualizarFuncionario($func);
         }else if ($botao=='deletar'){
-            $funcDAO->deletararFuncionario($codigo);
+            $funcDAO->deletarFuncionario($codigo);
         }
 ?>
