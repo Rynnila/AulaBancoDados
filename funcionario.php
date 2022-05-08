@@ -1,6 +1,6 @@
 <?php
     class funcionario{
-        private $codigo,$nome, $cargo, $codigoconsulta;
+        private $codigo,$nome, $cargo;
 
         public function getCodigo(){
             return $this->codigo;
