@@ -25,17 +25,17 @@ show databases;
 show tables;
 desc mercado;
 create table estoque(
-	codigo_estoque int,
+     codigo_prod int,
     produto varchar(90) not null,
     quantidade int,
     valor_compra decimal(9,2),
-    primary key(codigo_estoque)
+    primary key(codigo_prod)
     );
     
 create table funcionario(
-     codigo_funcionario int primary key,
-     nome varchar(90) not null,
-     cargo varchar(90)
+     codigo_func int primary key,
+     nome_func varchar(90) not null,
+     cargo_func varchar(90)
      );
     
 create table vendas(
@@ -43,8 +43,8 @@ create table vendas(
      produto_venda int,
      quantidade_venda int,
      funcionario_venda int,
-     foreign key(produto_venda) references estoque(codigo_estoque),
-     foreign key(funcionario_venda) references funcionario(codigo_funcionario)
+     foreign key(produto_venda) references estoque(codigo_prod),
+     foreign key(funcionario_venda) references funcionario(codigo_func)
 );    
 alter table vendas add data_venda int;  
 alter table vendas modify data_venda date;
@@ -53,15 +53,6 @@ desc funcionario;
 select * from funcionario;
 
 desc estoque;
-
-insert into estoque (codigo_estoque, produto, quantidade, valor_compra) values
-(1, 'Arroz', 10, 12.9),
-(2, 'Feijão', 20, 5);
-
-insert into funcionario (codigo_funcionario, nome, cargo) values
-(1, 'João', 'Analista de Sistemas'),
-(2, 'Nara', 'Gerente de TI');
-select * from funcionario;
 
 insert into vendas (codigo_venda, produto_venda, quantidade_venda, funcionario_venda) values
 (1,2,5,1),

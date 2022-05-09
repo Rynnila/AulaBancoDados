@@ -28,7 +28,7 @@
             }
         }else if ($botao_estoque=='atualizar produto'){
                 $estoqDAO->atualizarEstoque($estoq);
-            }else if ($botao_estoque=='deletar_prod'){
+            }else if ($botao_estoque=='deletar produto'){
                 $estoqDAO->deletarEstoque($codigo_prod);
             }
 ?>
