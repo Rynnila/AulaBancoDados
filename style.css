@@ -1,0 +1,52 @@
+*{
+    margin: auto;
+}
+body{
+    background-color: #8E8D8D;
+}
+.formulario{
+    font-family: times, sarif;
+    background-color: black;
+    color: #EFCAF8;
+    width: 50%;
+    margin-top: 50px;
+    padding: 10px 30px;
+    font-size: 15px;
+}
+h1{
+    text-align: center;
+    color: #868686;
+    background-color: #4e4052;
+    width: 50%;
+    padding: 6px;
+}
+h2{
+    text-align: center;
+    color: #EFCAF8;
+    font-size: 20px;
+}
+.config{
+    width: 350px;
+    height: 30px;
+    font-size: 15px;
+    background-color: pink;
+    color: black;
+}
+table{
+    margin: auto;
+}
+.botoes{
+    margin-top: 5px;
+    width: 200px;
+    display: block;
+    align-content: center;
+    padding-left: 5px;
+}
+.input{
+    font-size: 15px;
+    background-color: rgb(77, 26, 35);
+    color: rgb(255, 255, 255);
+}
+
+
+

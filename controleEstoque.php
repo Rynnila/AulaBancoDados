@@ -18,7 +18,7 @@
 
     if($botao_estoque=='cadastrar produto'){
         $estoqDAO->cadastrarEstoque($estoq);
-        }else if ($botao_estoque=='consultar produto'){
+        }else if ($botao_estoque=='consultar estoque'){
             $estoqDAO->consultarEstoque();
             foreach($estoqDAO->consultarEstoque() as $res){
                 echo $res ['codigo_prod']."<br>";
