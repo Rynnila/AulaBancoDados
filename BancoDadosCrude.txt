@@ -64,3 +64,19 @@ select * from vendas;
 delete from vendas where codigo_venda=4;
 
 update funcionario set nome='João da Silva' where codigo_funcionario=1;
+
+
+/*10/05
+Data Query - consulta de dados*/
+
+select produto, quantidade, valor_compra*1.1 as valor_teste  from estoque; /*vai criar uma nova tabela que some mais 10% do produto*/
+select *from funcionario order by nome_func asc; /*para colocar em ordem crescente os nomes e desc para decrescente*/
+select *from funcionario order by nome_func desc;
+select avg(valor_compra) from estoque; /*para tirar a média*/
+select min(valor_compra) as menor_valor from estoque; /*pegar o menor valor*/
+select max(valor_compra) as maior_valor from estoque; /*pegar o maior valor*/
+select sum(valor_compra) as soma_valor from estoque; /*vai fazer a soma*/
+select count(*) from estoque; /*vai me dizer quantas linhas estão ocupadas*/
+
+select * from estoque;
+desc estoque;
