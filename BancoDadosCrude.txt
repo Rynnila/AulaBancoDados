@@ -78,5 +78,14 @@ select max(valor_compra) as maior_valor from estoque; /*pegar o maior valor*/
 select sum(valor_compra) as soma_valor from estoque; /*vai fazer a soma*/
 select count(*) from estoque; /*vai me dizer quantas linhas estão ocupadas*/
 
+select * from estoque where valor_compra=12;/* ou valor_compra >= ou <=*  !=, se eu usar com letra vai por ordem alfabética
+or= ou e and= e
+between é entre isso e aquilo
+like j% começa com a letra j
+like %j% tem texto antes ou1 depois do j
+like %j finaliza com a letra j
+like __i% vai ter 2 caracteres antes do i
+*/
+
 select * from estoque;
 desc estoque;
