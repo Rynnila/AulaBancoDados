@@ -87,5 +87,21 @@ like %j finaliza com a letra j
 like __i% vai ter 2 caracteres antes do i
 */
 
+/*
+Join é para selecionar várias tabelas e relacioná-las
+o elo de ligação entre as tabelas é a chave estrangeira conversando com a chave primária
+select *from 
+inner join estoque on vendas.produto_venda=estoque.código_estoque
+
+select from vendas.codigo_venda, vendas.quantidade_vendas, estoque.produto, estoque.valor_produto from vendas
+
+select + a primeira tabela + inner join com a tabela que eu quero + chave estrangeira comparando com a chave primária
+inner retorna produtos que tem informações nas duas tabelas
+posso usar operações 'estoque.valor_compra*vendas.quantidade_venda as valor total'
+posso usar o where 'where vendas.codigo_venda=1' na ultima linha, depois do inner join
+para fazer com mais relacionamentos é só ir colocando inner join para cada tabela que for ser conectada
+
+*/
+
 select * from estoque;
 desc estoque;
